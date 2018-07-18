@@ -112,12 +112,9 @@
               <h3>Configuracion Actual</h3>
               <div class="row">
                   <div class="col-md-7">
-                      <p>Fecha ultima Configuracion : Fecha</p>
-                      <p>Ultima configuracion hecha por: Apellido Apellido, Nombre Nombre</p>
-                      <p>Datos de la ultima configuracion:</p>
-                      <?php
-                        include 'parametros.php';
-                      ?>
+                    <?php
+                      include 'parametros.php';
+                    ?>
                   </div>
                   <div class="col-md-5">
                       <a role="button" href="./configurar.php" class="btn btn-outline-secondary" >Actualizar Configuracion</a>

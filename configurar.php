@@ -121,107 +121,63 @@
                     <br>
                     <h3>Configuracion Actual</h3>
                     <div class="row">
-                        <div class="col-md-7">
-                            <p>Fecha ultima Configuracion : Fecha</p>
-                            <p>Ultima configuracion hecha por: Apellido Apellido, Nombre Nombre</p>
-                            <p>Datos de la ultima configuracion:</p>
-                            <?php
-                              include 'parametros.php';
-                            ?>
-                        </div>
-                        <div class="col-md-5">
-                            <button type="button" data-toggle="modal" data-target="#pwAdmin" class="btn btn-outline-secondary">
-                                Configuracion avanzada</button>
+                      <div class="col-md-7">
+                        <?php
+                          include 'parametros.php';
+                        ?>
+                      </div>
+                      <div class="col-md-5">
+                          <button type="button" data-toggle="modal" data-target="#pwAdmin" class="btn btn-outline-secondary">
+                              Configuracion avanzada</button>
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="pwAdmin" tabindex="-1" role="form" aria-labelledby="Contraseña para configuracion avanzada del sistema" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="pwAdminLabel">Ingrese Contraseña</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <div class="form-group">
-                                                    <label for="password-administrator" class="col-form-label">Contraseña</label>
-                                                    <input type="password" class="form-control" id="password-administrator">
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a role="button" href="./configurarAdmin.php" class="btn btn-primary">Ingresar</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                          <!-- Modal -->
+                          <div class="modal fade" id="pwAdmin" tabindex="-1" role="form" aria-labelledby="Contraseña para configuracion avanzada del sistema" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                      <div class="modal-header">
+                                          <h5 class="modal-title" id="pwAdminLabel">Ingrese Contraseña</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                              <span aria-hidden="true">&times;</span>
+                                          </button>
+                                      </div>
+                                      <div class="modal-body">
+                                          <form>
+                                              <div class="form-group">
+                                                  <label for="password-administrator" class="col-form-label">Contraseña</label>
+                                                  <input type="password" class="form-control" id="password-administrator">
+                                              </div>
+                                          </form>
+                                      </div>
+                                      <div class="modal-footer">
+                                          <a role="button" href="./configurarAdmin.php" class="btn btn-primary">Ingresar</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
                     </div>
-    
                     <br>
                     <h3 class="d-flex justify-content-center">Configurar Parametros</h3>
                     <br>
-
-
-
                     <div class="col-md-10">
                       <div class="">
                         <form>
-                            <div class="form-group row">
-                                <div class="col-lg-5 text-center">
-                                    <label for="parametro1">Parametro 1</label>
-                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" data-placement="right" title="Ayuda!">
-                                        ?
-                                    </button>
-                                </div>
-                                <div class="col-lg-7">
-                                    <input type="text" class="form-control" id="parametro1" placeholder="Ingrese el parametro 1">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-5 text-center">
-                                    <label for="parametro2">Parametro 2</label>
-                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" data-placement="right" title="Ayuda!">
-                                        ?
-                                    </button>
-                                </div>
-                                <div class="col-lg-7">
-                                    <input type="text" class="form-control" id="parametro2" placeholder="Ingrese el parametro 2">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-5 text-center">
-                                    <label for="parametro3">Parametro 3</label>
-                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" data-placement="right" title="Ayuda!">
-                                        ?
-                                    </button>
-                                </div>
-                                <div class="col-lg-7">
-                                    <input type="text" class="form-control" id="parametro3" placeholder="Ingrese el parametro 3">
-                                </div>
-                                
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-5 text-center">
-                                    <label for="parametro4">Parametro 4</label> 
-                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" data-placement="right" title="Ayuda!">
-                                        ?
-                                    </button>
-                                </div>
-                                <div class="col-lg-7">
-                                    <input type="text" class="form-control" id="parametro4" placeholder="Ingrese el parametro 4">
-                                </div>
-                            </div>
-                            <br>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-outline-primary">Guardar</button>
-                                <button type="submit" class="btn btn-outline-danger">Cancelar</button>
-                            </div>
+                          <div class="form-group row">
+                            <?php 
+                              include 'modificar.php';
+                            ?>
+                          </div>
+                          <br>
+                          <div class="text-center">
+                            <button type="submit" class="btn btn-outline-primary">Guardar</button>
+                            <button type="submit" class="btn btn-outline-danger">Cancelar</button>
+                          </div>
                         </form>
                       </div>
                     </div>
+
+                    
+
                 </div>
             </div>
     </div>
