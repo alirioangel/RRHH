@@ -47,6 +47,10 @@
     $query3 =  pg_query($conexion, $orden3);
   }
 
-  header("Location: index.php"); /* Redirect */
+  echo '<script>
+          alert("Montos calculados con exito.")
+          window.location.replace("index.php")
+        </script>';
+  //header("Location: index.php"); /* Redirect */
   exit();
 ?>

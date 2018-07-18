@@ -117,7 +117,31 @@
                     ?>
                   </div>
                   <div class="col-md-5">
-                      <a role="button" href="./configurar.php" class="btn btn-outline-secondary" >Actualizar Configuracion</a>
+                    <button type="button" data-toggle="modal" data-target="#pwAdmin" class="btn btn-outline-secondary">Actualizar Configuracion</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="pwAdmin" tabindex="-1" role="form" aria-labelledby="Contraseña para configuracion avanzada del sistema" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="pwAdminLabel">Ingrese Contraseña</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <form>
+                              <div class="form-group">
+                                <label for="password-administrator" class="col-form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password-administrator">
+                              </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <a role="button" href="./configurar.php" class="btn btn-primary">Ingresar</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
               </div>
               <div class="row">
