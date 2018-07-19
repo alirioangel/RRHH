@@ -17,6 +17,13 @@
   $query2 =  pg_query($conexion, $orden2);
   $arreglo2 = pg_fetch_all($query2);
 
+  //Query que solicita valores de los parametros
+  $orden3 = "UPDATE trabajadores SET fecha = current_date";
+  $query3 =  pg_query($conexion, $orden3);
+
+
+
+
   //guardar cada parametro en $vector
   $vector;
   $i = 0;
@@ -43,8 +50,8 @@
 
   function almacenar($conexion, $z, $id){
     //Query que guarda los bonos calculados en la database
-    $orden3 = "UPDATE trabajadores SET bono = $z WHERE id_user = $id";
-    $query3 =  pg_query($conexion, $orden3);
+    $orden4 = "UPDATE trabajadores SET bono = $z WHERE id_user = $id";
+    $query4 =  pg_query($conexion, $orden4);
   }
 
 

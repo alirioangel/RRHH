@@ -12,7 +12,7 @@
     //Ciclo que recorre le array con los datos de todos los trabajadores obtenidos del query
     foreach ($arreglo as $array) {
       echo '<tr>
-              <td>'. $array['id_user'].'</td>
+              <td>'. $array['fecha'].'</td>
               <td>'. $array['cedula'].'</td>
               <td>'. $array['nombre'].'</td>
               <td>'. $array['apellido'].'</td>

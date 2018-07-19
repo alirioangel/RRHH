@@ -145,7 +145,7 @@
 							<table class="table table-striped table-bordered">
 								<thead class="thead-dark">
 									<tr>
-										<th scope="col">Index</th>
+										<th scope="col">Fecha de Calculo</th>
 										<th scope="col">Cedula</th>
 										<th scope="col">Nombre</th>
 										<th scope="col">Apellido</th>
