@@ -47,6 +47,7 @@
     $query3 =  pg_query($conexion, $orden3);
   }
 
+
   echo '<script>
           alert("Montos calculados con exito.")
           window.location.replace("index.php")
