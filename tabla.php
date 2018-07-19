@@ -5,7 +5,7 @@
     or die("Can't connect to database".pg_last_error());
   
     //Query que solicita los datos de los trabajadores
-    $orden = "SELECT * FROM trabajadores";
+    $orden = "SELECT * FROM trabajadores ORDER BY id_user ASC";
     $query =  pg_query($conexion, $orden);
     $arreglo = pg_fetch_all($query);
 
