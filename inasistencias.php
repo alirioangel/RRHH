@@ -2,5 +2,5 @@
 
 
 <?php 
-  echo 'holamundo';
+  echo $_GET["id_user"];
 ?>
