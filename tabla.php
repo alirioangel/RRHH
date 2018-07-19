@@ -8,7 +8,7 @@
     $orden = "SELECT * FROM trabajadores";
     $query =  pg_query($conexion, $orden);
     $arreglo = pg_fetch_all($query);
-    $var = 33;
+
     //Ciclo que recorre le array con los datos de todos los trabajadores obtenidos del query
     foreach ($arreglo as $array) {
       echo '<tr>
@@ -23,7 +23,7 @@
                 <form action="inasistencias.php?id_user='.$array['id_user'].'" method="post" accept-charset="utf-8">
                   <div class="row">
                     <div class="col-md-6">
-                      <input type="number" class="form-control" required>                   
+                      <input type="number" class="form-control" name="horas" required>                   
                     </div>
                     <div class="col-md-5">
                       <button type="submit" class="btn btn-small btn-outline-primary">Cargar</button>
