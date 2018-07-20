@@ -21,9 +21,6 @@
   $orden3 = "UPDATE trabajadores SET fecha = current_date";
   $query3 =  pg_query($conexion, $orden3);
 
-
-
-
   //guardar cada parametro en $vector
   $vector;
   $i = 0;

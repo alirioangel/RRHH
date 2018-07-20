@@ -104,31 +104,31 @@
 						</div>
 						<div class="col-md-5">
 							<button type="button" data-toggle="modal" data-target="#pwAdmin" class="btn btn-outline-secondary">Actualizar Configuracion</button>
-							<!-- Modal -->
-							<div class="modal fade" id="pwAdmin" tabindex="-1" role="form" aria-labelledby="Contraseña para configuracion avanzada del sistema" aria-hidden="true">
-								<div class="modal-dialog" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title" id="pwAdminLabel">Ingrese Contraseña</h5>
-											<button type="button" class="close" data-dismiss="modal" aria-label="close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<div class="modal-body">
-                      <p class="statusMsg"></p>
-											<form name="administrador" method="post" action="index.php">
-												<div class="form-group">
-													<label for="password-administrator" class="col-form-label">Contraseña</label>
-													<input type="password" class="form-control" id="password-administrator">
-												</div>
-											</form>
-										</div>
-										<div class="modal-footer">
-											<button type="button" onclick="submitPasswordForm()" class="btn btn-small btn-primary submitbtn">Ingresar</button>
-										</div>
-									</div>
-								</div>
-							</div>
+              <!-- Modal -->
+              <div class="modal fade" id="pwAdmin" tabindex="-1" role="form" aria-labelledby="Contraseña para configuracion avanzada del sistema" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="pwAdminLabel">Ingrese Contraseña</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                     <p class="statusMsg"></p>
+                      <form name="administrador" method="post" action="index.php">
+                        <div class="form-group">
+                          <label for="password-administrator" class="col-form-label">Contraseña</label>
+                          <input type="password" class="form-control" id="password-administrator">
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" name="login_button" id="login_button" class="btn btn-small btn-primary submitbtn">Ingresar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 						</div>
 					</div>
 					<div class="row">
@@ -141,56 +141,16 @@
 					<br>
 					<h3 class="d-flex justify-content-center">Tabla de trabajadores de la UJAP</h3>
 					<br>
-					<div class="col-md-10 offset-md-1">
-						<div class="table-responsive">
-							<table class="table table-striped table-bordered">
-								<thead class="thead-dark">
-									<tr>
-										<th scope="col">Fecha de Calculo</th>
-										<th scope="col">Cedula</th>
-										<th scope="col">Nombre</th>
-										<th scope="col">Apellido</th>
-										<th scope="col">Cargo</th>
-										<th scope="col">Jornada Laboral</th>
-										<th scope="col">Bono de Alimentacion</th>
-										<th scope="col">Horas no Laboradas</th>
-									</tr>
-								</thead>
-								<tbody>
-									<?php
-										include 'tabla.php';
-									?>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<nav class="d-flex justify-content-center" aria-label="Navegacion de la tabla">
-						<ul class="pagination">
-							<li class="page-item disabled">
-								<span class="page-link">Previous</span>
-							</li>
-							<li class="page-item">
-								<a class="page-link" href="#">1</a>
-							</li>
-							<li class="page-item ">
-								<span class="page-link">
-										2
-								</span>
-							</li>
-							<li class="page-item">
-								<a class="page-link" href="#">3</a>
-							</li>
-							<li class="page-item">
-								<a class="page-link" href="#">Next</a>
-							</li>
-						</ul>
-					</nav>
+					<?php
+						include 'tabla.php';
+					?>		
 				</div>
-			</div>
-		</div>
-		<script src="./js/jquery-3.3.1.slim.min.js"></script>
-		<script src="./js/popper.min.js"></script>
-		<script src="./js/bootstrap.min.js"></script>
+      </div>
+    </div>		
+		<script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="./js/paginacion.js"></script>
 	</body>
 </html>

@@ -9,7 +9,26 @@
     $query =  pg_query($conexion, $orden);
     $arreglo = pg_fetch_all($query);
 
+
+    //Renderizando la tabla en index.php
     //Ciclo que recorre le array con los datos de todos los trabajadores obtenidos del query
+
+    echo '<div class="col-md-10 offset-md-1">
+            <div class="table-responsive">
+              <table id="trabajadores" class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Fecha de Calculo</th>
+                    <th scope="col">Cedula</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Cargo</th>
+                    <th scope="col">Jornada Laboral</th>
+                    <th scope="col">Bono de Alimentacion</th>
+                    <th scope="col">Horas no Laboradas</th>
+                  </tr>
+                </thead>
+              <tbody>';
     foreach ($arreglo as $array) {
       echo '<tr>
               <td>'. $array['fecha'].'</td>
@@ -22,7 +41,7 @@
               <td>
                 <form action="inasistencias.php?id_user='.$array['id_user'].'" method="post" accept-charset="utf-8">
                   <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                       <input type="number" class="form-control" name="horas" required>                   
                     </div>
                     <div class="col-md-5">
@@ -33,4 +52,15 @@
               </td>
             </tr>';
     }
+    //Paginacion
+    echo '</tbody>
+        </table>
+      </div>
+      <br>
+      <nav class="d-flex justify-content-center" aria-label="Navegacion de la tabla">
+        <ul class="pagination">
+        </ul>
+      </nav>
+    </div> 
+  </div>';
   ?> 
