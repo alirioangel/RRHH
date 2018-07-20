@@ -73,7 +73,6 @@
 
   //alerta y redirect
   echo '<script>
-          alert("Inasistencia cargada con exito!")
           window.location.replace("index.php")
         </script>';
   //header("Location: index.php"); /* Redirect */

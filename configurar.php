@@ -111,7 +111,7 @@
                 ?>
               </div>
               <div class="col-md-5">
-                          
+                <button type="button" onclick="location.href = 'index.php'" class="btn btn-outline-secondary">Volver a Inicio</button>        
               </div>
             </div>
             <h3 class="d-flex justify-content-center">Configurar Parametros</h3>

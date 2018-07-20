@@ -20,7 +20,7 @@
             </button>
           </div>
           <div class="col-lg-7">
-            <input type="text" class="form-control" id="" placeholder="Valor de ' .$array['nombre'].'">
+            <input type="number" class="form-control" id="" placeholder="Valor de ' .$array['nombre'].'">
           </div>';
   }
   
