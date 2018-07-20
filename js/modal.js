@@ -19,8 +19,9 @@
               $('#login_button').attr("disabled","disabled");
             },
             success: function(msg){
-              console.log('toy completaaaaa');
+              console.log('ERROR!');
               if(msg=='ok'){
+                console.log('Verificacion Exitosa!');
                 $('#password-administrator').val('');
                 $('.statusmsg').html('<span style="color:green;">la clave es correcta sera redireccionado en breve</span>')
                 setTimeout('redirect()', 1750);  
