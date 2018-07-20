@@ -115,7 +115,8 @@
 											</button>
 										</div>
 										<div class="modal-body">
-											<form>
+                      <p class="statusMsg"></p>
+											<form name="administrador" method="post" action="index.php">
 												<div class="form-group">
 													<label for="password-administrator" class="col-form-label">Contraseña</label>
 													<input type="password" class="form-control" id="password-administrator">
@@ -123,7 +124,7 @@
 											</form>
 										</div>
 										<div class="modal-footer">
-											<a role="button" href="./configurar.php" class="btn btn-primary">Ingresar</a>
+											<button type="button" onclick="submitPasswordForm()" class="btn btn-small btn-primary submitbtn">Ingresar</button>
 										</div>
 									</div>
 								</div>
@@ -190,5 +191,6 @@
 		<script src="./js/jquery-3.3.1.slim.min.js"></script>
 		<script src="./js/popper.min.js"></script>
 		<script src="./js/bootstrap.min.js"></script>
+    <script src="./js/modal.js"></script>
 	</body>
 </html>
