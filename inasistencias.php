@@ -65,7 +65,11 @@
   //Query que ingresa el nuevo valor del bono para el trabajador
   $orden = "UPDATE trabajadores SET bono = $c WHERE id_user = $id_t";
   $query =  pg_query($conexion, $orden);
-  $arreglo = pg_fetch_all($query);
+  
+
+  //Query que actualiza la fecha en la tabla trabajadores para este usuario
+  $orden = "UPDATE trabajadores SET fecha = current_date WHERE id_user = $id_t";
+  $query =  pg_query($conexion, $orden);
 
   //alerta y redirect
   echo '<script>

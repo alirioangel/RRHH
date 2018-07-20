@@ -8,7 +8,7 @@
   or die("Can't connect to database".pg_last_error());
 
   //Query que solicita los valores de los parametros
-  $orden = "SELECT * FROM parametros";
+  $orden = "SELECT * FROM parametros ORDER BY id_param ASC";
   $query =  pg_query($conexion, $orden);
   $arreglo = pg_fetch_all($query);
 
