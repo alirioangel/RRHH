@@ -19,13 +19,13 @@
               $('#login_button').attr("disabled","disabled");
             },
             success: function(msg){
-              console.log('ERROR!');
               if(msg=='ok'){
                 console.log('Verificacion Exitosa!');
                 $('#password-administrator').val('');
                 $('.statusmsg').html('<span style="color:green;">la clave es correcta sera redireccionado en breve</span>')
                 setTimeout('redirect()', 1750);  
               }else{
+                console.log('ERROR!');
                 $('.statusmsg').html('<span style="color:red;">Ha ocurrido un error!.</span>')
               }
               $('#login_button').removeAttr("disabled");
