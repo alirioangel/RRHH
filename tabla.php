@@ -9,10 +9,27 @@
     $query =  pg_query($conexion, $orden);
     $arreglo = pg_fetch_all($query);
 
+    //Query que solicita los datos de la tabla bono
+    $orden2 = "SELECT * FROM bono ORDER BY id_trabajador ASC";
+    $query2 =  pg_query($conexion, $orden2);
+    $arreglo2 = pg_fetch_all($query2);
+    
+
+    //guardar cada elemento de arreglo2 en una posicion de un vector
+    $vector;
+    $vector2;
+    $i = 0;
+    foreach ($arreglo2 as $value) {
+      $vector[$i] = $value['fecha'];
+      $vector2[$i] = $value['monto_bono'];
+      $i++;
+    }
+    //var_dump($vector2);
+    
 
     //Renderizando la tabla en index.php
     //Ciclo que recorre le array con los datos de todos los trabajadores obtenidos del query
-
+    $j = 0;
     echo '<div class="col-md-10 offset-md-1">
             <div class="row">
               <div class="col-md-8">
@@ -39,6 +56,7 @@
               <tbody>';
     foreach ($arreglo as $array) {
       echo '<tr>
+
               <td>'. $array['nombre'].'</td>
               <td>'. $array['apellido'].'</td>
               <td>'. $array['fecha'].'</td>
@@ -59,7 +77,9 @@
                 </form>
               </td>
             </tr>';
+            $j++;
     }
+    
     //Paginacion
     echo '</tbody>
         </table>
