@@ -11,6 +11,8 @@
   $id_t = $_GET["id_user"];
   //Obtener inasistencias del usuario en cuestion desde el form en index
   $horas = $_POST["horas"];
+  //Obtener los dias de inasistencia de la segunda tabla
+  $dias = $_POST["dias"];
 
 
   //Query que solicita el id del trabajador en cuestion
@@ -43,12 +45,24 @@
   $punto = $vector[1];
 
 
+
   //calcular el bono maximo del trabajador en cuestion
   $a = j_maxima($UT, $punto, $j);
-  //calcular las inasistencias del trabajador en cuestion
-  $b = inasistencias($UT, $punto, $horas);
-  //Bono correspondiente luego de las inasistencias
-  $c = $a - $b;
+
+
+  // DETERMINAR SI ES POR HORA O POR DIA
+  if($horas > 0){
+    //calcular las inasistencias del trabajador en cuestion
+    $b = inasistencias_horas($UT, $punto, $horas);
+    //Bono correspondiente luego de las inasistencias
+    $c = $a - $b;
+  }elseif ($dias > 0){
+    //calcular las inasistencias del trabajador en cuestion
+    $b = inasistencias_dias($UT, $punto, $dias);
+    //Bono correspondiente luego de las inasistencias
+    $c = $a - $b;
+  }
+  
 
 
   //FUNCIONES NECESARIAS PARA EL NUEVO MONTO DEL BONO
@@ -56,9 +70,13 @@
     $jm = $u * $p * $jorneid;
     return $jm;
   }
-  function inasistencias($u, $p, $horas){
-    $hi = $u * $p * $horas;
-    return $hi;
+  function inasistencias_horas($u, $p, $horas){
+    $horas_i = $u * $p * $horas;
+    return $horas_i;
+  }
+  function inasistencias_dias($u, $p, $dias){
+    $dias_i = $u * $p * ($dias * 8);
+    return $dias_i;
   }
 
 
@@ -67,7 +85,7 @@
   $query =  pg_query($conexion, $orden);
   
 
-  //Query que actualiza la fecha en la tabla trabajadores para este usuario
+  //Query que actualiza la fecha en la tabla bono para este usuario
   $orden = "UPDATE bono SET fecha = current_date WHERE id_trabajador = $id_t";
   $query =  pg_query($conexion, $orden);
 

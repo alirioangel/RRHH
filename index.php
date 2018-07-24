@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-      <!-- VAVEGACION.PHP tiene el head con el css y javascript ademas de el inicio del body-->
+      <!-- NAVEGACION.PHP tiene el head con el css y javascript ademas de el inicio del body-->
       <?php
         include 'layout.php';
       ?>

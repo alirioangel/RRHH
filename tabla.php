@@ -139,7 +139,7 @@
                 <form action="inasistencias.php?id_user='.$array['id_user'].'" method="post" accept-charset="utf-8">
                   <div class="row">
                     <div class="col-md-5">
-                      <input type="number" class="form-control" name="horas" required>                   
+                      <input type="number" class="form-control" name="dias" required>                   
                     </div>
                     <div class="col-md-5">
                       <button type="submit" class="btn btn-small btn-outline-primary">Cargar</button>
