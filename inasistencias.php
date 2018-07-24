@@ -2,6 +2,7 @@
 
 
 <?php
+  error_reporting(E_ERROR | E_WARNING | E_PARSE);
   //conectar con la database
   $conexion = pg_connect("host=localhost dbname=Tesis user=postgres password=password")
   or die("Can't connect to database".pg_last_error()); 
@@ -45,24 +46,32 @@
   $punto = $vector[1];
 
 
-
   //calcular el bono maximo del trabajador en cuestion
   $a = j_maxima($UT, $punto, $j);
 
 
-  // DETERMINAR SI ES POR HORA O POR DIA
+  //DETERMINAR SI ES POR DIAS O POR HORAS
   if($horas > 0){
+    function inasistencias_horas($u, $p, $horas){
+      $horas_i = $u * $p * $horas;
+      return $horas_i;
+    }
     //calcular las inasistencias del trabajador en cuestion
     $b = inasistencias_horas($UT, $punto, $horas);
-    //Bono correspondiente luego de las inasistencias
-    $c = $a - $b;
-  }elseif ($dias > 0){
-    //calcular las inasistencias del trabajador en cuestion
+  }
+
+  if($dias > 0){
+    function inasistencias_dias($u, $p, $dias){
+      $dias_i = $u * $p * ($dias * 8);
+      return $dias_i;
+    }
+    //calcular las inasistencias por dia
     $b = inasistencias_dias($UT, $punto, $dias);
-    //Bono correspondiente luego de las inasistencias
-    $c = $a - $b;
   }
   
+
+  //Bono correspondiente luego de las inasistencias
+  $c = $a - $b;
 
 
   //FUNCIONES NECESARIAS PARA EL NUEVO MONTO DEL BONO
@@ -70,16 +79,8 @@
     $jm = $u * $p * $jorneid;
     return $jm;
   }
-  function inasistencias_horas($u, $p, $horas){
-    $horas_i = $u * $p * $horas;
-    return $horas_i;
-  }
-  function inasistencias_dias($u, $p, $dias){
-    $dias_i = $u * $p * ($dias * 8);
-    return $dias_i;
-  }
-
-
+  
+  
   //Query que ingresa el nuevo valor del bono para el trabajador
   $orden = "UPDATE bono SET monto_bono = $c WHERE id_bono = $id_t";
   $query =  pg_query($conexion, $orden);
@@ -89,12 +90,9 @@
   $orden = "UPDATE bono SET fecha = current_date WHERE id_trabajador = $id_t";
   $query =  pg_query($conexion, $orden);
 
-  //alerta y redirect
+  //redirect
   echo '<script>
           window.location.replace("index.php")
         </script>';
-  //header("Location: index.php"); /* Redirect */
   exit();
-
-
 ?>
