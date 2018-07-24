@@ -14,6 +14,7 @@
     $query2 =  pg_query($conexion, $orden2);
     $arreglo2 = pg_fetch_all($query2);
     
+
     //guardar cada elemento de arreglo2 en una posicion de un vector
     $vector;
     $vector2;
