@@ -22,7 +22,7 @@
             </ol>
           </nav>
           <div class="container">
-            <h2 class="d-flex justify-content-center">Configuracion del Calculo de Bono de Alimentacion</h2>
+            <h2 class="d-flex justify-content-center">Configuracion de Parametros de Calculo</h2>
             <br>
             <br>
             <div class="row">
