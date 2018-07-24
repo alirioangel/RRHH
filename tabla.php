@@ -24,10 +24,9 @@
       $vector2[$i] = $value['monto_bono'];
       $i++;
     }
-    //var_dump($vector2);
     
 
-    //Renderizando la tabla en index.php
+    //------------------------TABLA PROFESORES------------------------
     //Ciclo que recorre le array con los datos de todos los trabajadores obtenidos del query
     $j = 0;
     echo '<div class="col-md-10 offset-md-1">
@@ -80,4 +79,6 @@
       </nav>
     </div> 
   </div>';
+  
+  //------------------------TABLA TODO MENOS PROFESORES------------------------
   ?> 
