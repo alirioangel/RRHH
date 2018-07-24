@@ -5,7 +5,7 @@
     or die("Can't connect to database".pg_last_error());
   
     //Query que solicita los datos de los trabajadores
-    $orden = "SELECT * FROM trabajadores ORDER BY id_user ASC";
+    $orden = "SELECT * FROM trabajadores ORDER BY nombre ASC";
     $query =  pg_query($conexion, $orden);
     $arreglo = pg_fetch_all($query);
 
@@ -31,14 +31,23 @@
     //Ciclo que recorre le array con los datos de todos los trabajadores obtenidos del query
     $j = 0;
     echo '<div class="col-md-10 offset-md-1">
+            <div class="row">
+              <div class="col-md-8">
+              </div>
+              <div class="col-md-4">
+                <input class="form-control" type="text" id="busqueda" onkeyup="buscar()" placeholder="Buscar por nombre..">
+              </div>
+            </div>
+            <br>
             <div class="table-responsive">
               <table id="trabajadores" class="table table-striped table-bordered">
                 <thead class="thead-dark">
                   <tr>
-                    <th scope="col">Fecha de Calculo</th>
-                    <th scope="col">Cedula</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellido</th>
+                    <th scope="col">Fecha de Calculo</th>
+                    <th scope="col">Cedula</th>
+                    <th scope="col">Cargo</th>
                     <th scope="col">Jornada Laboral</th>
                     <th scope="col">Bono de Alimentacion</th>
                     <th scope="col">Horas no Laboradas</th>
@@ -47,12 +56,14 @@
               <tbody>';
     foreach ($arreglo as $array) {
       echo '<tr>
-              <td>'. $vector[$j].'</td>
-              <td>'. $array['cedula'].'</td>
+
               <td>'. $array['nombre'].'</td>
               <td>'. $array['apellido'].'</td>
+              <td>'. $array['fecha'].'</td>
+              <td>'. $array['cedula'].'</td>
+              <td>'. $array['cargo'].'</td>
               <td>'. $array['jornada'].' hrs</td>
-              <td>'. $vector2[$j].' Bs.</td>
+              <td>'. $array['bono'].' Bs.</td>
               <td>
                 <form action="inasistencias.php?id_user='.$array['id_user'].'" method="post" accept-charset="utf-8">
                   <div class="row">
