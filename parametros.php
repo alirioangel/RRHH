@@ -16,9 +16,7 @@
   $orden2 = "SELECT fecha FROM parametros ORDER BY fecha ASC";
   $query2 =  pg_query($conexion, $orden2);
   $arreglo2 = pg_fetch_all($query2);
-      
 
-  //print_r(implode($arreglo2[0]))
 
   echo '<p>Fecha ultima Configuracion: '.implode($arreglo2[0]).'</p>
         <p>Datos de la ultima configuracion:</p>';
