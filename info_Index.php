@@ -17,6 +17,8 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
+
+
                 <div class="modal-body">
                   <form name="administrador" method="post" action="index.php">
                     <p id="statusMsg"></p>
@@ -26,6 +28,8 @@
                     </div>
                   </form>
                 </div>
+
+                
                 <div class="modal-footer">
                   <button type="button" name="login_button" id="login_button" class="btn btn-small btn-primary submitbtn">
                     Ingresar

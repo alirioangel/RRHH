@@ -20,12 +20,11 @@
   }; 
   
 
-  if(isset($_POST['formula'])){
+  if(!empty($_POST['formula'])){
     //informacion suministrada por el ajax
     $formula = $_POST['formula'];
-    $orden = "INSERT INTO formula VALUES (default, $formula)";
+    $orden = "UPDATE formula SET formula ='".$formula."' WHERE id_formula = 1";
     $query =  pg_query($conexion, $orden);
-  }else{
-    echo 'NANAI';
   }
+  
 ?>             
