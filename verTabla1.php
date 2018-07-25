@@ -62,12 +62,22 @@
 							<a role="button" href="./calcular.php" class="btn btn-outline-secondary">Calcular el bono de alimentacion</a>
 						</div>
 					</div>
+
 					<br>
-					<h3 class="d-flex justify-content-center">Escoge la Tabla a ver</h3>
+                    <h3 class="d-flex justify-content-center">Escoge la Tabla a ver</h3>
 					<br>
 					<div class="row">
 						<div class="col-md-6"><a role="button" href="./vertabla1.php" class="btn btn-block btn-outline-primary">Trabajadores Administrativos/obreros</a></div>
 						<div class="col-md-6"><a role="button" href="./verTabla2.php" class="btn btn-block btn-outline-primary">Profesores</a></div>
+					</div>
+                    <br>
+                    <br>
+                    <h3 class="d-flex justify-content-center">Tabla de Trabajadores Administrativos/ Obreros de la UJAP</h3>
+                    <br>
+					<div class="row">
+					<?php
+						include 'tabla.php';
+					?>		
 					</div>
 				</div>
       </div>
@@ -76,7 +86,7 @@
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/modal.js"></script>
-    <!--<script src="./js/paginacion.js"></script>-->
+    <script src="./js/paginacion.js"></script>
     <script src="./js/busqueda.js"></script>
 	</body>
 </html>
