@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-      <!-- VAVEGACION.PHP tiene el head con el css y javascript ademas de el inicio del body-->
+      <!-- NAVEGACION.PHP tiene el head con el css y javascript ademas de el inicio del body-->
       <?php
         include 'layout.php';
       ?>
@@ -63,10 +63,9 @@
 						</div>
 					</div>
 					<br>
-					<h3 class="d-flex justify-content-center">Tabla de trabajadores de la UJAP</h3>
+					<h3 class="d-flex justify-content-center">Tabla de Profesores de la UJAP</h3>
 					<br>
 					<div class="row">
-
 					<?php
 						include 'tabla.php';
 					?>		
@@ -78,7 +77,7 @@
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/modal.js"></script>
-    <script src="./js/paginacion.js"></script>
+    <!--<script src="./js/paginacion.js"></script>-->
     <script src="./js/busqueda.js"></script>
 	</body>
 </html>

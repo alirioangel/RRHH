@@ -2,7 +2,7 @@
 
 
 <?php 
-  
+  //------------------------------------------------TODO------------------------------------------------
   //conectar con la database
   $conexion = pg_connect("host=localhost dbname=Tesis user=postgres password=password")
   or die("Can't connect to database".pg_last_error());
