@@ -140,14 +140,21 @@
                   <li class="nav-link">la variable no puede comenzar por un numero o caracter especial ejemplo: 
                   unidadTributaria <span class="bg-success text-white"> (correcto) </span>/ !unidadTributaria <span class="bg-danger text-white"> (incorrecto) </span> </li>
                   <li class="nav-link">el valor de la variable debe ser numerico o una formula valida. Ejemplo: JornadaMaxima*5 ó 40 <span class="bg-success text-white"> (correcto) </span></li>
+<<<<<<< HEAD
                 </ul>
+=======
+              </ul>
+              <p id="statusVariable"></p>
+              <form name="create-variable" method="post" action="configurar.php">
+>>>>>>> d9f62f20f1614eee8805724b833a25a87b78700f
                 <div class="form-group">
                   <label for="nombre-variable" class="col-form-label">Nombre de la Variable</label>
-                  <input type="text" class="form-control" id="nombre-variable">
+                  <input type="text" class="form-control" id="nombre_variable">
                   <p id="status-create-variable"></p>
                 </div>
                 <div class="form-group">
                   <label for="valor-variable" class="col-form-label">Valor de la Variable</label>
+<<<<<<< HEAD
                   <input type="number" class="form-control" id="valor-variable">
                   <p id="status-create-variable2"></p>
                 </div>
@@ -156,6 +163,19 @@
                 <button type="button" name="create-variable-button" id="variable_button" class="btn btn-primary btn-lg">Crear</button>
               </div>
             </form>
+=======
+                  <input type="text" class="form-control" id="valor_variable">
+                  <p id="status-create-variable2"></p>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" 
+                      name="create-variable-button" 
+                      id="create_variable_button" 
+                      class="btn btn-primary btn-lg">Crear</button>
+            </div>
+>>>>>>> d9f62f20f1614eee8805724b833a25a87b78700f
           </div>
         </div>
       </div>
@@ -165,5 +185,7 @@
     <script src="./js/jquery-3.3.1.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/createVariable.js"></script>
+    <script src="./js/editFunction.js"></script>
   </body>
 </html>

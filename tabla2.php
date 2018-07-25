@@ -1,16 +1,16 @@
 
-  <?php
-    //conectar con la database
+ <?php
+
+ //conectar con la database
     $conexion = pg_connect("host=localhost dbname=Tesis user=postgres password=password")
     or die("Can't connect to database".pg_last_error());
   
-    //Query que solicita los datos de los profesores
-    $orden = "SELECT * FROM trabajadores WHERE cargo = 'Profesor' ORDER BY nombre ASC";
+    //Query que solicita los datos de los no profesores
+    $orden = "SELECT * FROM trabajadores WHERE cargo != 'Profesor' ORDER BY nombre ASC";
     $query =  pg_query($conexion, $orden);
     $arreglo = pg_fetch_all($query);
 
-
-    //Query que solicita los datos de la tabla bono
+      //Query que solicita los datos de la tabla bono
     $orden2 = "SELECT * FROM bono ORDER BY id_trabajador ASC";
     $query2 =  pg_query($conexion, $orden2);
     $arreglo2 = pg_fetch_all($query2);
@@ -25,12 +25,9 @@
       $vector2[$i] = $value['monto_bono'];
       $i++;
     }
-    
-
-    //------------------------TABLA PROFESORES------------------------
-    //Ciclo que recorre le array con los datos de todos los trabajadores obtenidos del query
-    $j = 0;
-    echo '<div class="col-md-10 offset-md-1">
+  //------------------------TABLA TODO MENOS PROFESORES------------------------
+      $j = 0;
+  echo '<div class="col-md-10 offset-md-1">
             <div class="row">
               <div class="col-md-8">
               </div>
@@ -90,5 +87,4 @@
       </nav>
     </div> 
   </div>';
-  
-?>
+  ?> 
