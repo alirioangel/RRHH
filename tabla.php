@@ -57,11 +57,11 @@
               <table id="trabajadores" class="table table-striped table-bordered">
                 <thead class="thead-dark">
                   <tr>
-                    <th scope="col">Fecha de Calculo</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellido</th>
                     <th scope="col">Cedula</th>
                     <th scope="col">Jornada Laboral</th>
+                    <th scope="col">Fecha de Calculo</th>
                     <th scope="col">Bono de Alimentacion</th>
                     <th scope="col">Dias no Laborados</th>
                   </tr>
@@ -69,11 +69,11 @@
                 <tbody>';
     foreach ($arreglo as $array) {
       echo '<tr>
-              <td>'. $vector[$j].'</td>
               <td>'. $array['nombre'].'</td>
               <td>'. $array['apellido'].'</td>
               <td>'. $array['cedula'].'</td>
               <td>'. $array['jornada'].' hrs</td>
+              <td>'. $vector[$j].'</td>
               <td>'. $vector2[$j].' Bs.</td>
               <td>
                 <form action="inasistencias.php?id_user='.$array['id_user'].'&cargo='.$array['cargo'].'" method="post" accept-charset="utf-8">

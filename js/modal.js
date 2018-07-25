@@ -6,7 +6,7 @@
       $('#login_button').click(function(){  
         var password= $('#password-administrator').val();
         if(password.trim() == ''){
-          alert('Por favor escriba la contraseña del administrador.');
+          $('#statusMsg').html('<span style="color:red;">La formula no puede estar en blanco!</span>');
           $('#password-administrator').focus();
           return false
         }else{

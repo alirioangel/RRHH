@@ -1,8 +1,12 @@
+
+
+
+
 $(document).ready(function () {
     $('#modify_function_button').click(function () {
         var formula = $('#formula').val();
         if (formula.trim() == ''){
-            $('#status-formula').html('<span style="color:red;">La formula no puede estar en blanco</span>');
+            $('#status-formula').html('<span style="color:red;">La formula no puede estar en blanco!</span>');
             $('#formula').focus();
             return false
         }else{
@@ -11,9 +15,8 @@ $(document).ready(function () {
                 url: "editFunction.php",
                 data: {formula:formula},
                 beforeSend: function(){
-                    $('#edit_function_button').html('editando...');
-                    $('#edit_function_button').attr("disabled","disabled");
-
+                  $('#edit_function_button').html('editando...');
+                  $('#edit_function_button').attr("disabled","disabled");
                 },
                 success: function(msg){
                     if(msg="ok"){

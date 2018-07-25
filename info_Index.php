@@ -5,6 +5,8 @@
           <button type="button" data-toggle="modal" data-target="#pwAdmin" class="btn btn-outline-secondary">
             Actualizar Configuracion
           </button>
+
+          
           <!-- Modal -->
           <div class="modal fade" id="pwAdmin" tabindex="-1" role="form" aria-labelledby="Contraseña para configuracion avanzada del sistema" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -16,8 +18,8 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                 <p class="statusMsg"></p>
                   <form name="administrador" method="post" action="index.php">
+                    <p id="statusMsg"></p>
                     <div class="form-group">
                       <label for="password-administrator" class="col-form-label">Contraseña</label>
                       <input type="password" class="form-control" id="password-administrator">
@@ -34,6 +36,11 @@
           </div>
         </div>
       </div>
+
+
+
+
+      
       <div class="row">
         <div class="col-md-7">
         </div>
