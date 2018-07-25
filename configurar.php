@@ -1,6 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
 
+
+<?php
+  session_start();
+  if(isset($_SESSION['entrada'])){
+    //nanai
+  }else{
+    header("Location: index.php");
+    die();
+  }
+?>
+
+
+<html lang="en">
+    
     <?php 
       include 'layout.php';
     ?>

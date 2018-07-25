@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php
+  session_start();
+  if(isset($_SESSION['entrada'])){
+    unset($_SESSION['entrada']);
+  }else{
+    //nanai
+  }
+?>
 <html lang="en">
 
       <!-- NAVEGACION.PHP tiene el head con el css y javascript ademas de el inicio del body-->

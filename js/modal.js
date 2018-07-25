@@ -19,14 +19,14 @@
               $('#login_button').attr("disabled","disabled");
             },
             success: function(msg){
-              if(msg=='ok'){
+              if(msg==1){
                 console.log('Verificacion Exitosa!');
                 $('#password-administrator').val('');
-                $('.statusmsg').html('<span style="color:green;">la clave es correcta sera redireccionado en breve</span>')
-                setTimeout('redirect()', 1750);  
+                $('#statusMsg').html('<span style="color:green;">Acceso exitoso, sera redireccionado en breve.</span>')
+                setTimeout('redirect()', 2000);  
               }else{
                 console.log('ERROR!');
-                $('.statusmsg').html('<span style="color:red;">Ha ocurrido un error!.</span>')
+                $('#statusMsg').html('<span style="color:red;">Ha ocurrido un error!</span>')
               }
               $('#login_button').removeAttr("disabled");
               $('#login_button').html('ingresar');
