@@ -1,11 +1,14 @@
 
   <?php
+    error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
     //conectar con la database
     $conexion = pg_connect("host=localhost dbname=Tesis user=postgres password=password")
     or die("Can't connect to database".pg_last_error());
   
+
     //Query que solicita los datos de los profesores
-    $orden = "SELECT * FROM trabajadores WHERE cargo = 'Profesor' ORDER BY nombre ASC";
+    $orden = "SELECT * FROM trabajadores WHERE cargo != 'Profesor' ORDER BY id_user ASC";
     $query =  pg_query($conexion, $orden);
     $arreglo = pg_fetch_all($query);
 
@@ -16,20 +19,32 @@
     $arreglo2 = pg_fetch_all($query2);
     
 
+    //guardar los id de trbajadores del primer query para comparacion
+    $vector3;
+    $i = 0;
+    foreach ($arreglo as $value) {
+      $vector3[$i] = $value['id_user'];
+      $i++;
+    }
+
+
     //guardar cada elemento de arreglo2 en una posicion de un vector
     $vector;
     $vector2;
     $i = 0;
+    $j = 0;
     foreach ($arreglo2 as $value) {
-      $vector[$i] = $value['fecha'];
-      $vector2[$i] = $value['monto_bono'];
-      $i++;
+      if($value['id_bono'] == $vector3[$i]){
+        $vector[$i] = $value['fecha'];
+        $vector2[$i] = $value['monto_bono'];
+        $i++;
+      }
     }
     
 
     //------------------------TABLA PROFESORES------------------------
-    //Ciclo que recorre le array con los datos de todos los trabajadores obtenidos del query
-    $j = 0;
+    //Ciclo que recorre el array con los datos de todos los trabajadores obtenidos del query
+    
     echo '<div class="col-md-10 offset-md-1">
             <div class="row">
               <div class="col-md-8">
@@ -50,7 +65,7 @@
                     <th scope="col">Cargo</th>
                     <th scope="col">Jornada Laboral</th>
                     <th scope="col">Bono de Alimentacion</th>
-                    <th scope="col">Horas no Laboradas</th>
+                    <th scope="col">Dias no Laborados</th>
                   </tr>
                 </thead>
               <tbody>';
