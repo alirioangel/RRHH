@@ -1,13 +1,13 @@
 
   <?php
-    error_reporting(E_ERROR | E_WARNING | E_PARSE);
+    //error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
     //conectar con la database
     $conexion = pg_connect("host=localhost dbname=Tesis user=postgres password=password")
     or die("Can't connect to database".pg_last_error());
   
 
-    //Query que solicita los datos de los profesores
+    //Query que solicita los datos de los NO profesores
     $orden = "SELECT * FROM trabajadores WHERE cargo != 'Profesor' ORDER BY id_user ASC";
     $query =  pg_query($conexion, $orden);
     $arreglo = pg_fetch_all($query);
@@ -43,7 +43,6 @@
     
 
     //------------------------TABLA PROFESORES------------------------
-    //Ciclo que recorre el array con los datos de todos los trabajadores obtenidos del query
     
     echo '<div class="col-md-10 offset-md-1">
             <div class="row">
@@ -62,24 +61,22 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellido</th>
                     <th scope="col">Cedula</th>
-                    <th scope="col">Cargo</th>
                     <th scope="col">Jornada Laboral</th>
                     <th scope="col">Bono de Alimentacion</th>
                     <th scope="col">Dias no Laborados</th>
                   </tr>
                 </thead>
-              <tbody>';
+                <tbody>';
     foreach ($arreglo as $array) {
       echo '<tr>
               <td>'. $vector[$j].'</td>
               <td>'. $array['nombre'].'</td>
               <td>'. $array['apellido'].'</td>
               <td>'. $array['cedula'].'</td>
-              <td>'. $array['cargo'].'</td>
               <td>'. $array['jornada'].' hrs</td>
               <td>'. $vector2[$j].' Bs.</td>
               <td>
-                <form action="inasistencias.php?id_user='.$array['id_user'].'" method="post" accept-charset="utf-8">
+                <form action="inasistencias.php?id_user='.$array['id_user'].'&cargo='.$array['cargo'].'" method="post" accept-charset="utf-8">
                   <div class="row">
                     <div class="col-md-5">
                       <input type="number" class="form-control" name="horas" required>                   
@@ -104,6 +101,5 @@
         </ul>
       </nav>
     </div> 
-  </div>';
-  
-?>
+  </div>'; 
+  ?>

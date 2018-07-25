@@ -76,6 +76,7 @@
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="./js/paginacion.js"></script>
     <script src="./js/busqueda.js"></script>
 	</body>
 </html>

@@ -2,7 +2,7 @@
 
 
 <?php
-  error_reporting(E_ERROR | E_WARNING | E_PARSE);
+  //error_reporting(E_ERROR | E_WARNING | E_PARSE);
   //conectar con la database
   $conexion = pg_connect("host=localhost dbname=Tesis user=postgres password=password")
   or die("Can't connect to database".pg_last_error()); 
@@ -10,11 +10,18 @@
 
   //Obtener el id del usuario en cuestion desde index
   $id_t = $_GET["id_user"];
-  //Obtener inasistencias del usuario en cuestion desde el form en index
-  $horas = $_POST["horas"];
-  //Obtener los dias de inasistencia de la segunda tabla
-  $dias = $_POST["dias"];
+  //Obtener el cargo del trabajador
+  $charge = $_GET["cargo"];
 
+  if($charge == 'Profesor'){
+    //Obtener inasistencias del usuario en cuestion desde el form en index
+    $horas = $_POST["horas"];
+    $dias = 0;
+  }else{
+    //Obtener los dias de inasistencia de la segunda tabla
+    $dias = $_POST["horas"];
+    $horas = 0;
+  }
 
   //Query que solicita el id del trabajador en cuestion
   $orden = "SELECT jornada FROM trabajadores WHERE id_user = $id_t";
@@ -51,7 +58,7 @@
 
 
   //DETERMINAR SI ES POR DIAS O POR HORAS
-  if($horas > 0){
+  if($charge == 'Profesor'){
     function inasistencias_horas($u, $p, $horas){
       $horas_i = $u * $p * $horas;
       return $horas_i;
@@ -60,7 +67,7 @@
     $b = inasistencias_horas($UT, $punto, $horas);
   }
 
-  if($dias > 0){
+  if($charge != 'Profesor'){
     function inasistencias_dias($u, $p, $dias){
       $dias_i = $u * $p * ($dias * 8);
       return $dias_i;
@@ -91,8 +98,16 @@
   $query =  pg_query($conexion, $orden);
 
   //redirect
-  echo '<script>
-          window.location.replace("index.php")
-        </script>';
-  exit();
+  if($charge == 'Profesor'){
+    echo '<script>
+            window.location.replace("verTabla2.php")
+          </script>';
+          exit();
+  }
+  if($charge != 'Profesor'){
+    echo '<script>
+            window.location.replace("verTabla1.php")
+          </script>';
+          exit();
+  }
 ?>

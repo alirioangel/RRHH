@@ -63,18 +63,17 @@
 						</div>
 					</div>
 					<br>
-                    <h3 class="d-flex justify-content-center">Escoge la Tabla a ver</h3>
+          <h3 class="d-flex justify-content-center">Escoge la Tabla a ver</h3>
 					<br>
 					<div class="row">
 						<div class="col-md-6"><a role="button" href="./vertabla1.php" class="btn btn-block btn-outline-primary">Trabajadores Administrativos/obreros</a></div>
 						<div class="col-md-6"><a role="button" href="./verTabla2.php" class="btn btn-block btn-outline-primary">Profesores</a></div>
 					</div>
-                    <br>
-                    <br>
+          <br>
+          <br>
 					<h3 class="d-flex justify-content-center">Tabla de Profesores de la UJAP</h3>
-                    <br>
+          <br>
 					<div class="row">
-
 					<?php
 						include 'tabla2.php';
 					?>		
