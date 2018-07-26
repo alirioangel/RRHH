@@ -23,12 +23,14 @@
         </tr>';
   };
 
+
   if(!empty($_POST['formula'])){
     //informacion suministrada por el ajax
     $formula = $_POST['formula'];
-    $orden = "UPDATE formula SET formula ='".$formula."' WHERE id_formula = 1";
-    $query =  pg_query($conexion, $orden);
+    $orden1 = "UPDATE formula SET formula ='".$formula."' WHERE id_formula = 1";
+    $query1 =  pg_query($conexion, $orden1);
   }
+
 
   if(!empty($_POST['nombreVariable'])){
     $name = $_POST['nombreVariable'];
@@ -37,11 +39,27 @@
     $query2 =  pg_query($conexion, $orden2);
   }
 
+
   if(isset($_POST['nombre'])){
-    //informacion suministrada por el ajax
     $name = $_POST['nombre'];
-    $orden3 = "DELETE FROM parametros WHERE nombre = '".$name."'";
+    $orden3 = "SELECT * FROM parametros WHERE nombre = '".$name."'";
     $query3 =  pg_query($conexion, $orden3);
+    $arreglo3 = pg_fetch_all($query3);
+
+    foreach ($arreglo3 as $value) {
+      //SOFT DELETE
+      $orden5 = "INSERT INTO parametros_eliminados VALUES (default, '".$value['nombre']."', '".$value['valor']."', '".$value['tooltip']."',current_date)";
+      $query5 = pg_query($conexion, $orden5);
+    }
+
+    if($query5){
+      echo 'Eliminacion con  exito!';
+      //informacion suministrada por el ajax
+      $orden4 = "DELETE FROM parametros WHERE nombre = '".$name."'";
+      $query4 =  pg_query($conexion, $orden4);
+    }else{
+      echo 'PENE';
+    }
   }
 
 ?>

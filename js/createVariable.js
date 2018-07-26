@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('#create_variable_button').click(function () {
-        var nombre = $('#nombre_variable').val();
+        var nombre = "$"+$('#nombre_variable').val();
         var valor = $('#valor_variable').val();
         $('#status-create-variable').html('');
         $('#status-create-variable2').html('');

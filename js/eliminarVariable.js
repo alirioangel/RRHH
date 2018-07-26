@@ -9,8 +9,8 @@
           data: {nombre:nombre},
           success: function(msg){
             if(msg){
-              console.log('Variable eliminada!');
-              setTimeout('redirect()', 1250);  
+              alert('Variable eliminada!');
+              setTimeout('redirect()', 500);  
             }else{
               alert("No se pudo eliminar.");
               console.log('ERROR!');
