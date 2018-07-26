@@ -226,5 +226,6 @@
     <script src="./js/editFunction.js"></script>
     <script src="./js/editVariable.js"></script>
     <script src="./js/createVariable.js"></script>
+    <script src="./js/eliminarVariable.js"></script>
   </body>
 </html>

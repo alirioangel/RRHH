@@ -17,8 +17,8 @@
     echo'<tr>
           <td>'.$value['nombre'].'</td>
           <td>
-            <button type="submit" data-toggle="modal" data-target="#edit-variable" class="btn btn-sm btn-outline-success">Editar</button>
-            <button type="submit" onclick="eliminarVar()" class="btn btn-sm btn-outline-danger">Eliminar</button>
+            <button type="button" data-toggle="modal" data-target="#edit-variable" class="btn btn-sm btn-outline-success">Editar</button>
+            <button type="button" id="'.$value['id_param'].'" class="btn btn-sm btn-outline-danger" value="'.$value['nombre'].'" onclick=eliminarVar(this)>Eliminar</button>
           </td>
         </tr>';
   };
@@ -35,6 +35,13 @@
     $val = $_POST['valorVariable'];
     $orden2 = "INSERT INTO parametros VALUES (default, '".$name."', '".$val."', default, current_date)";
     $query2 =  pg_query($conexion, $orden2);
+  }
+
+  if(isset($_POST['nombre'])){
+    //informacion suministrada por el ajax
+    $name = $_POST['nombre'];
+    $orden3 = "DELETE FROM parametros WHERE nombre = '".$name."'";
+    $query3 =  pg_query($conexion, $orden3);
   }
 
 ?>
