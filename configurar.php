@@ -137,6 +137,8 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+
+
           <div class="modal-body">
             <p class="">En el siguiente formulario debe considerar: </p>
             <ul>
@@ -159,6 +161,8 @@
               </div>
             </form>
           </div>
+
+          
           <div class="modal-footer">
             <button type="button" name="create-variable-button" id="create_variable_button" class="btn btn-primary btn-lg">
               Crear
@@ -167,6 +171,50 @@
         </div>
       </div>
     </div>
+
+
+    <!-- INICIO modal para MODIFICAR variables -->
+    <div class="modal fade" id="edit-variable" tabindex="-1" role="form" aria-labelledby="edit-Variable" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editVariable">Modificar Variable</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="">En el siguiente formulario debe considerar: </p>
+            <ul>
+              <li class="nav-link">Cada variable debe de tener un nombre unico</li>
+              <li class="nav-link">la variable no puede comenzar por un numero o caracter especial ejemplo: 
+              unidadTributaria <span class="bg-success text-white"> (correcto) </span>/ !unidadTributaria <span class="bg-danger text-white"> (incorrecto) </span> </li>
+              <li class="nav-link">el valor de la variable debe ser numerico o una formula valida. Ejemplo: JornadaMaxima*5 ó 40 <span class="bg-success text-white"> (correcto) </span></li>
+            </ul>
+            <p id="statusVariable"></p>
+            <form name="create-variable" method="post" action="configurar.php">
+              <div class="form-group">
+                <label for="nombre-variable" class="col-form-label">Nombre de la Variable</label>
+                <input type="text" class="form-control" id="nombre_variable" value="nombre actual de la variable">
+                <p id="status-create-variable"></p>
+              </div>
+              <div class="form-group">
+                <label for="valor-variable" class="col-form-label">Valor de la Variable</label>
+                <input type="number" class="form-control" id="valor-variable" value="valor actual de la variable">
+                <p id="status-create-variable2"></p>
+              </div>
+              <input type="text" value="id (cambiar el type por number ya q aqui va un numero y darle class hidden)" id="id_variable">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" name="edit-variable-button" id="edit_variable_button" class="btn btn-primary btn-lg">
+              Editar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FIN modal para MODIFICAR variables -->
 
 
     <!-- FIN modal para variables -->

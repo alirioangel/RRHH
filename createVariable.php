@@ -14,12 +14,12 @@
 
 
   foreach ($arreglo as $value) {
-            echo'<tr>
-                  <td>'.$value['nombre'].'</td>
-                  <td>
-                    <button type="submit" class="btn btn-small btn-outline-primary">Editar</button>
-                    <button type="submit" class="btn btn-small btn-outline-primary">Eliminar</button>
-                  </td>
-                </tr>';
-          };
+    echo'<tr>
+          <td>'.$value['nombre'].'</td>
+          <td>
+            <button type="submit" data-toggle="modal" data-target="#edit-variable" class="btn btn-sm btn-outline-success">Editar</button>
+            <button type="submit" onclick="" class="btn btn-sm btn-outline-danger">Eliminar</button>
+          </td>
+        </tr>';
+  };
 ?>
