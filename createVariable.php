@@ -18,8 +18,23 @@
           <td>'.$value['nombre'].'</td>
           <td>
             <button type="submit" data-toggle="modal" data-target="#edit-variable" class="btn btn-sm btn-outline-success">Editar</button>
-            <button type="submit" onclick="" class="btn btn-sm btn-outline-danger">Eliminar</button>
+            <button type="submit" onclick="eliminarVar()" class="btn btn-sm btn-outline-danger">Eliminar</button>
           </td>
         </tr>';
   };
+
+  if(!empty($_POST['formula'])){
+    //informacion suministrada por el ajax
+    $formula = $_POST['formula'];
+    $orden = "UPDATE formula SET formula ='".$formula."' WHERE id_formula = 1";
+    $query =  pg_query($conexion, $orden);
+  }
+
+  if(!empty($_POST['nombreVariable'])){
+    $name = $_POST['nombreVariable'];
+    $val = $_POST['valorVariable'];
+    $orden2 = "INSERT INTO parametros VALUES (default, '".$name."', '".$val."', default, current_date)";
+    $query2 =  pg_query($conexion, $orden2);
+  }
+
 ?>
