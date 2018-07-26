@@ -143,7 +143,7 @@
               <li class="nav-link">Cada variable debe de tener un nombre unico</li>
               <li class="nav-link">la variable no puede comenzar por un numero o caracter especial ejemplo: 
               unidadTributaria <span class="bg-success text-white"> (correcto) </span>/ !unidadTributaria <span class="bg-danger text-white"> (incorrecto) </span> </li>
-              <li class="nav-link">el valor de la variable debe ser numerico o una formula valida. Ejemplo: JornadaMaxima*5 ó 40 <span class="bg-success text-white"> (correcto) </span></li>
+              <li class="nav-link">el valor de la variable debe ser numerico o una formula valida. Ejemplo: JornadaMaxima*5 o 40 <span class="bg-success text-white"> (correcto) </span></li>
             </ul>
             <p id="statusVariable"></p>
             <form name="create-variable" method="post" action="configurar.php">
