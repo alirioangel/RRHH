@@ -26,6 +26,11 @@
   $query5 =  pg_query($conexion, $orden5);
   $arreglo5 = pg_fetch_all($query5);
 
+  //Query que busca la formula de la tabla formula
+  $ordenFormula = "SELECT formula FROM formula WHERE id_formula=1";
+  $queryFormula = pg_query($conexion, $ordenFormula);
+  $Formula = pg_fetch_all($queryFormula);
+
   //guardar cada parametro en $vector
   $vector;
   $i = 0;
@@ -39,16 +44,23 @@
     
 
   foreach ($arreglo as $array) {
-    $z = calcular($array['jornada'], $UT, $punto);
+    $z = calcular($array['jornada']);
     almacenar($conexion, $z, $array['id_user']);
   }
 
 
   //$x es la jornada laboral de cada trabajador
-  function calcular($x, $ut, $pto){
+/*  function calcular($x, $ut, $pto){
     $y = $ut * $pto * $x;
     return $y;
   }
+*/
+
+function calcular($jornada_del_trabajador){
+
+  return eval($Formula);
+
+}
 
   function almacenar($conexion, $z, $id){
     //Query que guarda los bonos calculados en la database

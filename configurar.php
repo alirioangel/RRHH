@@ -127,12 +127,60 @@
     <!-- FIN modal para formula -->
 
 
-    <!-- INICIO modal para variables -->
+    <!-- INICIO modal DE CREACION para variables -->
     <div class="modal fade" id="create-variables" tabindex="-1" role="form" aria-labelledby="Crear-Variables" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
+
+
           <div class="modal-header">
             <h5 class="modal-title" id="createVariable">Crear Variable</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+
+          <div class="modal-body">
+            <p class="">En el siguiente formulario debe considerar: </p>
+            <ul>
+              <li class="nav-link">Cada variable debe de tener un nombre unico</li>
+              <li class="nav-link">la variable no puede comenzar por un numero o caracter especial ejemplo: 
+              unidadTributaria <span class="bg-success text-white"> (correcto) </span>/ !unidadTributaria <span class="bg-danger text-white"> (incorrecto) </span> </li>
+              <li class="nav-link">el valor de la variable debe ser numerico o una formula valida. Ejemplo: JornadaMaxima*5 o 40 <span class="bg-success text-white"> (correcto) </span></li>
+            </ul>
+            <p id="statusVariable"></p>
+            <form>
+              <div class="form-group">
+                <label for="nombre_variable" class="col-form-label">Nombre de la Variable</label>
+                <input type="text" class="form-control" id="nombre_variable">
+                <p id="status-create-variable"></p>
+              </div>
+              <div class="form-group">
+                <label for="valor-variable" class="col-form-label">Valor de la Variable</label>
+                <input type="number" class="form-control" id="valor_variable">
+                <p id="status-create-variable2"></p>
+              </div>
+            </form>
+          </div>
+
+
+          <div class="modal-footer">
+            <button type="button" name="create-variable-button" id="create_variable_button" class="btn btn-primary btn-lg">
+              Crear
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- INICIO modal para MODIFICAR variables -->
+    <div class="modal fade" id="edit-variable" tabindex="-1" role="form" aria-labelledby="edit-Variable" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editVariable">Modificar Variable</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -149,24 +197,26 @@
             <form name="create-variable" method="post" action="configurar.php">
               <div class="form-group">
                 <label for="nombre-variable" class="col-form-label">Nombre de la Variable</label>
-                <input type="text" class="form-control" id="nombre_variable">
+                <input type="text" class="form-control" id="nombre_variable" value="">
                 <p id="status-create-variable"></p>
               </div>
               <div class="form-group">
                 <label for="valor-variable" class="col-form-label">Valor de la Variable</label>
-                <input type="number" class="form-control" id="valor-variable">
+                <input type="number" class="form-control" id="valor-variable" value="">
                 <p id="status-create-variable2"></p>
               </div>
+              <input type="number" id="id_variable">
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" name="create-variable-button" id="create_variable_button" class="btn btn-primary btn-lg">
-              Crear
+            <button type="button" name="edit-variable-button" id="edit_variable_button" class="btn btn-primary btn-lg">
+              Editar
             </button>
           </div>
         </div>
       </div>
     </div>
+    <!-- FIN modal para MODIFICAR variables -->
 
 
     <!-- FIN modal para variables -->
@@ -174,6 +224,8 @@
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/editFunction.js"></script>
+    <script src="./js/editVariable.js"></script>
     <script src="./js/createVariable.js"></script>
+    <script src="./js/eliminarVariable.js"></script>
   </body>
 </html>

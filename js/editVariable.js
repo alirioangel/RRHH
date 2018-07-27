@@ -1,7 +1,8 @@
 $(document).ready(function () {
-    $('#create_variable_button').click(function () {
-        var nombre = "$"+$('#nombre_variable').val();
+    $('#edit_variable_button').click(function () {
+        var nombre = $('#nombre_variable').val();
         var valor = $('#valor_variable').val();
+        var id = $('#id_variable');
         $('#status-create-variable').html('');
         $('#status-create-variable2').html('');
         if (nombre.trim() == '') {
@@ -18,14 +19,15 @@ $(document).ready(function () {
                 url: "createVariable.php",
                 data: {
                     nombreVariable: nombre,
-                    valorVariable: valor
+                    valorVariable: valor,
+                    idVariable: id 
                 },
                 beforeSend: function () {
                     $('#create_variable_button').html('editando...');
                     $('#create_variable_button').attr("disabled", "disabled");
                 },
                 success: function (msg) {
-                    if (msg) {
+                    if (msg == 'ok') {
                         console.log('Creacion exitosa');
                         $('#nombre_variable').val('');
                         $('#valor_variable').val('');
@@ -33,7 +35,7 @@ $(document).ready(function () {
                             $('#create_variable_button').removeAttr("disabled");
                             $('#create_variable_button').html('editar');
                             setTimeout(() => {
-                              window.location = 'configurar.php';
+                                window.location = 'configurar.php';
                             }, 500);
 
                         }, 1000);
