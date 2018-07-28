@@ -8,11 +8,12 @@
   }
 ?>
 <html lang="en">
-
+			
       <!-- NAVEGACION.PHP tiene el head con el css y javascript ademas de el inicio del body-->
       <?php
         include 'layout.php';
-      ?>
+			?>
+			
 			<!-- FIN DE LA NAVEGACION -->
 			<div class="col-md-10 minHeight">
 				<nav class="" aria-label="breadcrumb">
@@ -38,8 +39,13 @@
               include 'info_Index.php';
             ?>
 				</div>
-      </div>
-    </div>		
+			</div>
+
+		</div>
+      <?php
+        include 'footer.php';
+			?>
+				
 		<script src="./js/jquery-3.3.1.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>

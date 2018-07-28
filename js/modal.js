@@ -23,19 +23,25 @@
                 console.log('Verificacion Exitosa!');
                 $('#password-administrator').val('');
                 $('#statusMsg').html('<span style="color:green;">Acceso exitoso, sera redireccionado en breve.</span>')
-                setTimeout('redirect()', 2000);  
+                setTimeout(() => {
+                  $('#login_button').removeAttr("disabled");
+                  $('#login_button').html('ingresar');
+                  setTimeout(() => {
+                    window.location = 'configurar.php';
+                  }, 500);  
+                }, 1000);
+
               }else{
+                $('#login_button').removeAttr("disabled");
+                $('#login_button').html('ingresar');
                 console.log('ERROR!');
                 $('#statusMsg').html('<span style="color:red;">Ha ocurrido un error!</span>')
               }
-              $('#login_button').removeAttr("disabled");
-              $('#login_button').html('ingresar');
+
             }
           });
         }
       });
     })
-    function redirect(){
-      window.location = 'configurar.php';
-    } 
+
   //</script>

@@ -15,7 +15,7 @@
           <div class="row">
             <div class="nav-side-menu-bg col-md-2">
               <div class="nav-side-menu">
-                <div class="brand">Sistema Nomina UJAP</div>
+                <div class="brand"><img src="./img/Logo.png" style="max-width:50px; margin-right:15px;">Sistema Nomina UJAP</div>
                 <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
                 <div class="menu-list">
                   <ul id="menu-content" class="menu-content collapse out">

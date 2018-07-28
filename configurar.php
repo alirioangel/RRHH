@@ -73,7 +73,7 @@
                       Crear Variables
                     </button>  
                     <hr>
-                    <table class="table table-borderless">
+                    <table class="table table-bordered">
                       <tr>
                         <th class="col-md-10">Variables</th>
                         <th class="col-md-2">Accion</th>
@@ -90,6 +90,11 @@
         </div>
       </div>
     </div>
+</div>
+      <?php
+        include 'footer.php';
+			?>
+				
 
 
     <!-- INICIO modal para formula -->
@@ -164,7 +169,6 @@
             </form>
           </div>
 
-
           <div class="modal-footer">
             <button type="button" name="create-variable-button" id="create_variable_button" class="btn btn-primary btn-lg">
               Crear
@@ -173,7 +177,7 @@
         </div>
       </div>
     </div>
-
+    <!-- FIN modal para variables -->
 
     <!-- INICIO modal para MODIFICAR variables -->
     <div class="modal fade" id="edit-variable" tabindex="-1" role="form" aria-labelledby="edit-Variable" aria-hidden="true">
@@ -218,8 +222,6 @@
     </div>
     <!-- FIN modal para MODIFICAR variables -->
 
-
-    <!-- FIN modal para variables -->
     <script src="./js/jquery-3.3.1.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>

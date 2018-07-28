@@ -27,9 +27,9 @@
   $arreglo5 = pg_fetch_all($query5);
 
   //Query que busca la formula de la tabla formula
-  $ordenFormula = "SELECT formula FROM formula WHERE id_formula=1";
+  $ordenFormula = "SELECT * FROM formula WHERE id_formula=1";
   $queryFormula = pg_query($conexion, $ordenFormula);
-  $Formula = pg_fetch_all($queryFormula);
+  $formula = pg_fetch_all($queryFormula);
 
   //guardar cada parametro en $vector
   $vector;
@@ -57,7 +57,7 @@
 */
 
 function calcular($jornada_del_trabajador){
-
+  
   return eval($Formula);
 
 }

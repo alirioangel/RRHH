@@ -17,8 +17,8 @@
     echo'<tr>
           <td>'.$value['nombre'].'</td>
           <td>
-            <button type="button" data-toggle="modal" data-target="#edit-variable" class="btn btn-sm btn-outline-success">Editar</button>
-            <button type="button" id="'.$value['id_param'].'" class="btn btn-sm btn-outline-danger" value="'.$value['nombre'].'" onclick=eliminarVar(this)>Eliminar</button>
+            <button type="button" data-toggle="modal" data-target="#edit-variable" class="btn btn-block btn-outline-success">Editar</button>
+            <button type="button" id="'.$value['id_param'].'" class="btn btn-block btn-outline-danger" value="'.$value['nombre'].'" onclick=eliminarVar(this)>Eliminar</button>
           </td>
         </tr>';
   };

@@ -9,6 +9,7 @@
 
 /* Sidebar */
 
+
 .nav-side-menu-bg{
     background-color: #2e353d;
         padding-left: 5px !important;
@@ -42,19 +43,6 @@
     margin: 0px;
     line-height: 35px;
     cursor: pointer;
-    /*
-    .collapsed{
-       .arrow:before{
-                 font-family: FontAwesome;
-                 content: "\f053";
-                 display: inline-block;
-                 padding-left:10px;
-                 padding-right: 10px;
-                 vertical-align: middle;
-                 float:right;
-            }
-     }
-*/
 }
 
 .nav-side-menu ul :not(collapsed) .arrow:before,
@@ -64,7 +52,7 @@
     margin-left: 10px;
     padding-right: 10px;
     vertical-align: middle;
-    float: right;
+
 }
 
 .nav-side-menu ul .active,
